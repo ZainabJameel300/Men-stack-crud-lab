@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Cat Information</title>
+</head>
+<body>
+    <%- include('./partials/navbar') %>
+    <h1>Edit Cat Information:</h1>
+
+    <form action="/cats/<%= cats._id%>?_methods=PUT" method="post">
+        <label for="name">Name:</label>
+        <input value="<%= cats.name %>" name="name" id="name" type="text">
+        <br>
+        <br>
+        <label for="age">Age:</label>
+        <input value="<%= cats.age %>" name="age" id="age" type="text">
+        <br>
+        <br>
+<label for="breed">Cat Breed:</label>
+<select name="breed" id="breed">
+
+    <option value="british shorthair"
+        <% if (cats.breed.trim() === 'british shorthair') { %> selected <% } %>>
+        british shorthair
+    </option>
+
+    <option value="maine coon"
+        <% if (cats.breed.trim() === 'maine coon') { %> selected <% } %>>
+        maine coon
+    </option>
+
+    <option value="ragdoll"
+        <% if (cats.breed.trim() === 'ragdoll') { %> selected <% } %>>
+        ragdoll
+    </option>
+
+    <option value="persian"
+        <% if (cats.breed.trim() === 'persian') { %> selected <% } %>>
+        persian
+    </option>
+
+    <option value="siamese"
+        <% if (cats.breed.trim() === 'siamese') { %> selected <% } %>>
+        siamese
+    </option>
+
+    <option value="scottish fold"
+        <% if (cats.breed.trim() === 'scottish fold') { %> selected <% } %>>
+        scottish fold
+    </option>
+
+    <option value="other"
+        <% if (cats.breed.trim() === 'other') { %> selected <% } %>>
+        other
+    </option>
+
+     </select>
+       <br>
+       <br>
+       <input <% if(cats.isFriendly){ %> checked <% } %> name="isFriendly" id="isFriendly" type="checkbox">
+       <label for="isFriendly">Are they friendly :) ?</label>
+       <br>
+        <br>
+        <label for="furColor">Fur Color:</label>
+        <input value="<%= cats.furColor%>" name="furColor" id="furColor" type="text">
+         <br>
+         <br>
+         <label for="catImage">Cat Image URL:</label>
+        <input value="<%= cats.catImage%>" name="catImage" id="catImage" type="text" >
+         <br>
+         <br>
+         <button>Edit Info</button>
+    </form>
+    
+</body>
+</html>

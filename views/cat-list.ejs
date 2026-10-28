@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats for Adoption</title>
+</head>
+<body>
+    <%- include('./partials/navbar') %>
+    <h1>Cats for Adoption : </h1>
+    <ol>
+    <% for(let oneCat of cats){ %>
+       <li>
+        <%= oneCat.name %>
+       </li>
+       <a href="/cats/<%=oneCat.id%>">See more details</a>
+       <br>
+       <br>
+    <%} %>
+    </ol>
+</body>
+</html>

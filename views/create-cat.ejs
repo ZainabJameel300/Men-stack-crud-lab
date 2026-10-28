@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List a Cat</title>
+</head>
+<body>
+    <%- include('./partials/navbar') %>
+    <h1>List a Cat for Adoption!</h1>
+     <form action="/cats" method="post">
+
+        <label for="name">Name:</label>
+        <input name="name" id="name" type="text">
+        <br>
+        <br>
+        <label for="age">Age:</label>
+        <input name="age" id="age" type="text">
+        <br>
+        <br>
+        <label for="breed">Cat Breed:</label>
+        <select name="breed" id="breed">
+        <option value="british shorthair">british shorthair</option>
+        <option value="maine coon">maine coon</option>
+        <option value="ragdoll">ragdoll</option>
+        <option value="persian">persian</option>
+        <option value="siamese">siamese</option>
+        <option value="scottish fold">scottish fold</option>
+        <option value="other">other</option>
+       </select>
+       <br>
+       <br>
+       <input name="isFriendly" id="isFriendly" type="checkbox">
+       <label for="isFriendly">Are they friendly :) ?</label>
+       <br>
+        <br>
+        <label for="furColor">Fur Color:</label>
+        <input name="furColor" id="furColor" type="text">
+         <br>
+         <br>
+         <label for="catImage">Cat Image URL:</label>
+        <input name="catImage" id="catImage" type="text" >
+         <br>
+         <br>
+
+        <button>List</button>
+     </form>
+</body>
+</html>

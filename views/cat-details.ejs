@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./partials/navbar') %>
+    <h1>
+        <%= cats.name%> Adoption Inormation:
+    </h1>
+
+        <img src="<%= cats.catImage%>" alt="Image of cat to be adopted" height="150" width="150">
+    
+        <ul>
+           <li><h2>Age : <%= cats.age%></h2></li>
+           <li><h2>Breed : <%= cats.breed%></h2></li> 
+           <li><h2>Are they Friendly ? : <% if(cats.isFriendly){ %> Yes <%} else{%> Needs more socialsing<%}%>%> %></h2></li>
+           <li><h2>Fur Color: <%= cats.furColor%></h2></li>
+        </ul>
+
+        <br>
+        <form action="/cats/<%= cats._id%>/delete?_methods=DELETE" method="post">
+        <button>Adopt Cat</button>
+        </form>
+        <br>
+        <form action="/cats/<%= cats._id%>/edit" method="get">
+            <button>Edit Cat Information</button>
+        </form>
+        
+
+    
+</body>
+</html>
